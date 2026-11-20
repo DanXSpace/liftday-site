@@ -96,7 +96,7 @@ li { margin-bottom: 0.35em; }
 .hero .lede { max-width: 34ch; }
 
 .recommendation {
-  width: min(100%, 320px);
+  width: min(100%, 240px);
   margin: 0;
   justify-self: center;
 }
@@ -125,7 +125,7 @@ li { margin-bottom: 0.35em; }
 }
 .first-workout h2 { margin: 0 0 8px; }
 .first-workout p { margin: 0; }
-.first-workout img { max-width: 280px; justify-self: center; }
+.first-workout img { max-width: 208px; justify-self: center; }
 
 .features {
   list-style: none;
@@ -146,8 +146,9 @@ li { margin-bottom: 0.35em; }
 
 @media (min-width: 700px) {
   .wrap-wide main { padding-top: 44px; }
-  .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 320px); gap: 32px; }
-  .first-workout { grid-template-columns: minmax(0, 1fr) minmax(0, 280px); padding: 24px; }
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 264px); gap: 32px; }
+  .recommendation { width: 100%; }
+  .first-workout { grid-template-columns: minmax(0, 1fr) minmax(0, 208px); padding: 24px; }
   .features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
