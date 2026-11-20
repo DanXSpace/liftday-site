@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img">
+  <title>LiftDay Lift Mark · Primary</title>
+  <path id="background" fill="#D4FF3A" d="M0 0H120V120H0Z"/>
+  <path id="lift-l" fill="#0E0F11" d="M35.000 25.000 L57.000 25.000 L45.000 76.000 L94.000 76.000 L89.000 95.000 L19.000 95.000 Z"/>
+  <path id="chevron" fill="#0E0F11" d="M65.000 25.000 L86.000 25.000 L103.000 44.000 L84.000 63.000 L64.000 63.000 L82.000 44.000 Z"/>
+</svg>

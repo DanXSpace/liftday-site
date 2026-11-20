@@ -1,50 +1,108 @@
+/* LiftDay brand colors (docs/brand-guidelines.md in the app repo).
+   The site is dark-only, like the app. */
 :root {
-  --bg: #ffffff;
-  --text: #1c1c1e;
-  --muted: #6e6e73;
-  --accent: #e8590c;
-  --rule: #e5e5ea;
+  --carbon: #0E0F11;
+  --surface: #17191C;
+  --separator: #2A2D32;
+  --chalk: #F2F3F0;
+  --text-secondary: #9A9FA6;
+  --lime: #D4FF3A;
+  --lime-soft: rgba(212, 255, 58, 0.12);
+  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #000000;
-    --text: #f2f2f7;
-    --muted: #98989d;
-    --accent: #ff8a3d;
-    --rule: #2c2c2e;
-  }
+@font-face {
+  font-family: "Archivo Condensed";
+  src: url("/fonts/ArchivoCondensed-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
 }
 
 * { box-sizing: border-box; }
 
+html { background: var(--carbon); }
+
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--carbon);
+  color: var(--chalk);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 
-main {
+a { color: var(--lime); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
   max-width: 680px;
   margin: 0 auto;
-  padding: 48px 16px 64px;
+  padding: 0 16px;
 }
 
-h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
-h2 { font-size: 1.25rem; margin: 2.2em 0 0.4em; }
-p, ul { margin: 0 0 1em; }
-li { margin-bottom: 0.3em; }
-a { color: var(--accent); }
+/* Header: the horizontal wordmark, never retyped as text. */
+.site-header { padding: 24px 0 8px; }
+.site-header a { display: inline-block; line-height: 0; }
+.site-header img { width: 160px; height: auto; }
 
-.lede { font-size: 1.15rem; }
-.muted { color: var(--muted); }
+main { padding: 40px 0 64px; }
+
+h1, h2 {
+  font-family: "Archivo Condensed", "Arial Narrow", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.02;
+}
+
+h1 { font-size: clamp(2.6rem, 9vw, 4.2rem); margin: 0 0 20px; }
+h2 { font-size: 1.6rem; margin: 2.2em 0 0.4em; }
+h1 .accent { color: var(--lime); }
+
+p, ul { margin: 0 0 1em; }
+li { margin-bottom: 0.35em; }
+
+.lede { font-size: 1.2rem; color: var(--chalk); }
+.muted { color: var(--text-secondary); }
+
+.badge {
+  display: inline-block;
+  margin: 8px 0 40px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--lime-soft);
+  color: var(--lime);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em;
+  display: grid;
+  gap: 12px;
+}
+
+.features li {
+  margin: 0;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--separator);
+  border-radius: 14px;
+}
+
+.features strong { display: block; margin-bottom: 2px; }
+.features span { color: var(--text-secondary); }
+
+/* Privacy policy */
+.policy h1 { font-size: clamp(2.2rem, 7vw, 3.2rem); }
+.policy strong { color: var(--chalk); }
 
 footer {
-  margin-top: 56px;
-  padding-top: 16px;
-  border-top: 1px solid var(--rule);
-  color: var(--muted);
+  border-top: 1px solid var(--separator);
+  padding: 20px 0 40px;
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
+
+footer p { margin: 0; }
