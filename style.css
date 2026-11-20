@@ -64,15 +64,56 @@ li { margin-bottom: 0.35em; }
 .lede { font-size: 1.2rem; color: var(--chalk); }
 .muted { color: var(--text-secondary); }
 
-.badge {
-  display: inline-block;
-  margin: 8px 0 40px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: var(--lime-soft);
-  color: var(--lime);
+/* Plain status text, not a button: there's no store or beta link yet. */
+.status {
+  margin: 4px 0 0;
+  color: var(--text-secondary);
   font-weight: 600;
   font-size: 0.95rem;
+}
+.status::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--lime);
+  vertical-align: 1px;
+}
+
+/* Home hero: copy, then one real app screenshot. Side by side on wide screens. */
+.wrap-wide { max-width: 960px; }
+.wrap-wide main > * { max-width: 680px; }
+.wrap-wide main > .hero { max-width: none; }
+
+.hero {
+  display: grid;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.hero-shot { margin: 0; max-width: 360px; }
+.hero-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--separator);
+  border-radius: 20px;
+}
+.hero-shot figcaption {
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 820px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 56px;
+    align-items: center;
+  }
 }
 
 .features {
