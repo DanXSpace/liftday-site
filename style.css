@@ -64,7 +64,24 @@ li { margin-bottom: 0.35em; }
 .lede { font-size: 1.2rem; color: var(--chalk); }
 .muted { color: var(--text-secondary); }
 
-/* Plain status text, not a button: there's no store or beta link yet. */
+/* The public TestFlight beta, until the App Store link replaces it.
+   Lime with carbon text, like the app's primary buttons. */
+.cta { margin: 8px 0 12px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 14px;
+  background: var(--lime);
+  color: var(--carbon);
+  font-weight: 700;
+  text-decoration: none;
+}
+.button:hover { background: #E2FF73; }
+.button:focus-visible { outline-offset: 4px; border-radius: 14px; }
+
+/* Plain status text under the button. */
 .status {
   margin: 4px 0 0;
   color: var(--text-secondary);
